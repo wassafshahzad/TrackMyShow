@@ -23,4 +23,4 @@ class Show:
     @null_validation
     @episode_validator
     def last_episode(self,last_episode):
-        self._last_episode = last_episode
+        self._last_episode = int(last_episode)

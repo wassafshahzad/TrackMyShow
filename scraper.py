@@ -6,8 +6,10 @@ def get_latest_episode(url):
     req = requests.get(url)
     soup = BeautifulSoup(req.content, 'html.parser')
     episode = soup.findAll('a',rel = BOOK_MARK,class_=CLASS)[0]
-    print(episode)
+    return parser(episode)
 
 
 def parser(link):
-    episode_number = link['href'].split(-)
+    list_p = link['href'].split("-")
+    episode_number  = int(list_p[list_p.index("episode") + 1])
+    return episode_number # can be in one line but for readability divided it into two lines
